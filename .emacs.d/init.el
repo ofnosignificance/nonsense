@@ -110,7 +110,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Ubuntu Mono" :foundry "DAMA" :slant normal :weight medium :height 120 :width normal)))))
+ '(default ((t (:family "IBM Plex Mono" :foundry "IBM " :slant normal :weight medium :height 120 :width normal)))))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -118,5 +118,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    '("a60b04e5c0fef30209f9576f04651938472b57cb1dae0375d80a53a78f515f69" "afde6368be6868e8e3dd53fad1ac51223d5484f9e6836496e7987802c9a9663d" default))
+ '(global-display-line-numbers-mode 'relative)
  '(package-selected-packages
-   '(poet-theme company sly magit forth-mode doxymacs almost-mono-themes)))
+   '(poet-theme company sly magit forth-mode doxymacs almost-mono-themes))
+ '(tool-bar-mode nil))
