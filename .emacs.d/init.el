@@ -24,25 +24,6 @@
 (unless (package-installed-p 'json-mode)
   (package-install 'json-mode))
 
-(setq company-idle-delay 0.2)
-(setq company-minimum-prefix-length 1)
-
-(setq history-length 2000)
-(load-theme 'poet-dark t)
-(electric-pair-mode 1)
-(global-display-line-numbers-mode 1)
-(setq make-backup-files nil)
-(setq-default fill-column 80)
-(setq whitespace-line-column 80)
-(setq-default tab-width 4)
-(setq-default truncate-lines t)
-
-;; Peformance tweaks
-(setq gc-cons-threshold 50000000)
-(setq gc-cons-threshold most-positive-fixnum)
-(add-hook 'emacs-startup-hook
-          (lambda () (setq gc-cons-threshold (* 50 1024 1024))))
-
 ;; Some functions for quality of life, so to say
 (defun kotorifan/check-gnus ()
   (interactive)
@@ -67,7 +48,7 @@
 	(compile "doxygen Doxyfile")))
 
 (defun kotorifan/check-empty ()
-  "Check email for empty subject line"
+ "Check email for empty subject line"
   (interactive)
   (beginning-of-buffer)
   (if (search-forward "Subject: \n" nil t)
@@ -94,31 +75,60 @@
 (setq c-default-style "linux"	  
   c-basic-offset 4)
 
-(indent-tabs-mode 1)
+;; (indent-tabs-mode 1)
 (scroll-bar-mode  0)
-(tool-bar-mode 0)
 (global-display-line-numbers-mode t)
-(setq global-display-line-numbers-mode 'relative)
+(global-hl-line-mode 1)
+(show-paren-mode 1)
+(load-theme 'poet-dark t)
+(electric-pair-mode 1)
+(global-display-line-numbers-mode 1)
+(setq show-paren-style 'parenthesis
+	  global-hl-line-sticky-flag t
+	  global-display-line-numbers-mode 'relative
+	  electric-indent-mode 0
+;;	  max-mini-window-height 0.7
+	  ;; Peformance tweaks
+	  gc-cons-threshold 50000000
+	  gc-cons-threshold most-positive-fixnum
+	  ;; Company-mode
+	  company-idle-delay 0.2
+	  company-minimum-prefix-length 1
+	  ;; Tabline settings
+	  make-backup-files nil
+	  history-length 2000
+	  whitespace-line-column 72)
+(setq-default tab-width 4
+			  truncate-lines t
+			  fill-column 72)
+
+(setq inferior-lisp-program "sbcl")
 
 ;; Hooks
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
+(add-hook 'text-mode-hook 'ruler-mode)
 (add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'mail-send-hook 'kotorifan/check-empty)
+(add-hook 'emacs-startup-hook #'global-jinx-mode)
+(add-hook 'emacs-startup-hook
+          (lambda () (setq gc-cons-threshold (* 50 1024 1024))))
 
+;; keymappings
+(keymap-global-set "M-$" #'jinx-correct)
+(keymap-global-set "C-M-$" #'jinx-languages)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(global-display-line-numbers-mode 'relative)
+ '(package-selected-packages
+   '(json-mode markdown-mode multiple-cursors company doxymacs magit sly forth-mode poet-theme))
+ '(tab-bar-mode t)
+ '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "IBM Plex Mono" :foundry "IBM " :slant normal :weight medium :height 120 :width normal)))))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("a60b04e5c0fef30209f9576f04651938472b57cb1dae0375d80a53a78f515f69" "afde6368be6868e8e3dd53fad1ac51223d5484f9e6836496e7987802c9a9663d" default))
- '(global-display-line-numbers-mode 'relative)
- '(package-selected-packages
-   '(poet-theme company sly magit forth-mode doxymacs almost-mono-themes))
- '(tool-bar-mode nil))
