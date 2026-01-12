@@ -3,7 +3,7 @@
 #+license: Creative Commons Zero 1.0 (Public domain), No rights reserved
 #+description: List of ideas to make, eventually
 
-* Forge of Empires clone:
+** Forge of Empires clone:
 - city building game like Forge of Empires, made for people who have
   nostalgia for old (2015-2019) FoE and who want to have control over
   the game, their data, want the game progress to be saved locally
@@ -46,7 +46,7 @@
 - fair negations for side quests
 - side quests to get blueprints for great buildings, get game points
 
-* Common Lisp IRC client
+** Common Lisp IRC client
 - IRC client, no compatibility with IRCv3, IRCv3 suxx
 - written in Common Lisp
 - log history compatible with irssi
@@ -56,7 +56,7 @@
   potentially only /dev/tcp/host/port, so bash, and no other
   requirements, purely TUI or CLI application, like irssi
 
-* OS project
+** OS project
 - make something for the Kotori command, nini command
 - make some weird black voodoo magic POSIX compatability layer that
   makes running POSIX stuff possible, but doesn't make the OS require to
@@ -69,7 +69,7 @@
 - not be a retard and fix my IDT before I fantasize about things that
   will never exist. 
 
-* eternal-monologue.net self-hosted
+** eternal-monologue.net self-hosted
 - Self-host it from a RPI/Starfive Visionfive 2/other SBC
 - use NetBSD as the OS, use wireguard-go instead of the native NetBSD
   wireguard implementation (for the reverse proxying)
@@ -80,6 +80,10 @@
   VPS only for reverse proxying
 - ...
 
-* Gameboy emulator
+** Gameboy emulator
 - graphical debugger, no print-debugging, use that to work with the
   emulator, and do this first and foremost
+
+** Gikopoi2 modifications
+- add Gondola, Kotori characters
+- make more rooms
