@@ -1,9 +1,7 @@
 (require 'package)
-
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
                          ("nongnu" . "https://elpa.nongnu.org/nongnu/")
                          ("melpa" . "https://melpa.org/packages/")))
-
 (package-initialize)
 
 ;; The theme I use
@@ -17,7 +15,7 @@
 (use-package sly
   :init (setq inferior-lisp-program "sbcl"))
 
-;; Develipment tools
+;; Development tools
 (use-package magit)
 (use-package doxymacs)
 (use-package company
@@ -30,6 +28,7 @@
   :hook (hook-mode . jinx-mode))
 
 (defun kotorifan/check-gnus ()
+"Generate a configuration for Gnus, if none exists"
   (interactive)
   (let ((auth-path (expand-file-name "~/.authinfo")))
     (unless (file-exists-p auth-path)
@@ -42,6 +41,7 @@
     (message "You may try opening gnus now")))
 
 (defun kotorifan/doxygen ()
+"Generate documentation with Doxygen"
   (interactive)
   (let ((default-directory (or (locate-dominating-file default-directory "Doxyfile")
                                default-directory)))
@@ -55,6 +55,7 @@
         (error "The subject line is empty"))))
 
 (defun kotorifan/dl-file (&optional url download-dir download-name)
+  "Downloads a file to a given path, if no path is given, it goes to ~/Downloads"
   (interactive)
   (let* ((url (or url (read-string "Enter download URL: ")))
          (dir (or download-dir "~/Downloads/"))
@@ -67,6 +68,7 @@
       (message "Download failed"))))
 
 (defun kotorifan/check-server ()
+  "Checks whether Emacs runs as a daemon"
   (interactive)
   (if (daemonp)
       (message "Emacs runs as a server")
@@ -108,17 +110,14 @@
 
 (keymap-global-set "M-$" #'jinx-correct)
 (keymap-global-set "C-M-$" #'jinx-languages)
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(global-display-line-numbers-mode 'relative)
- '(package-selected-packages
-   '(jinx json-mode markdown-mode multiple-cursors company doxymacs magit sly forth-mode poet-theme))
+ '(display-line-numbers-type 'relative)
+ '(global-display-line-numbers-mode t)
  '(tool-bar-mode nil))
-
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
