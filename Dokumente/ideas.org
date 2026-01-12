@@ -1,0 +1,85 @@
+#+title: Ideas
+#+author: kotorifan
+#+license: Creative Commons Zero 1.0 (Public domain), No rights reserved
+#+description: List of ideas to make, eventually
+
+* Forge of Empires clone:
+- city building game like Forge of Empires, made for people who have
+  nostalgia for old (2015-2019) FoE and who want to have control over
+  the game, their data, want the game progress to be saved locally
+- completely offline, without DRM, without online requirement, no
+  addictive elements, no incentive to login at a particular time,
+  completely public domain/non-copyrighted software and assets, no 
+  restrictions on what you can do with the game, self-hostable
+- multiple ages to go through, with a research tree that requires weeks
+  to go through one age
+- fighting system with isometric map, different units that each have an
+  optimal enemy for each for defensive and offense, different o/d values
+  for other enemies, each unit type is the same in each "age"
+- written in C++17 or newer and Raylib/OpenGL, very portable, has to run on
+  Windows, Linux, OpenBSD/NetBSD/FreeBSD, minimal depedencies
+- local Sqlite database for game data, can be opened and read by humans,
+  can be modified by the user easily
+- hacking, modding, and additional texture encouraged, no artificial
+  limitations
+- no multiplayer, this would be too difficult, and would suck, since you
+  would need to rely on the server for months and years (ideally), so
+  that is bad
+- be playable with custom frontends (server + frontend structure),
+  possible to change values with the command line, graphical main game
+- more detail and historic accuracy
+- goods are depedent on the map you get and you have only two viable
+  goods for each game session, improved good production for these, poor
+  production for all others
+- Currencies: Coins (Production, streets, etc.), Supplies (military,
+  houses), Metals (expansions), diamonds are part of the game, but
+  obviously just possible get through playing, no p2w
+- Always the option to solve problems and getting map regions with
+  either goods/trading or battles
+- autobattles, which purposefully are worse than manual battles, the bot
+  has the upper hand when in autobattle and there is no insane
+  descrepancy between the fighting units
+- No events, no special buildings, only buildings from the ages and
+  great buildings
+- Great buildings require "forge" points to level up, blueprints
+  required to build them
+- fair negations for side quests
+- side quests to get blueprints for great buildings, get game points
+
+* Common Lisp IRC client
+- IRC client, no compatibility with IRCv3, IRCv3 suxx
+- written in Common Lisp
+- log history compatible with irssi
+- very simple, no sidebar, for neither nicks nor channels
+- switching between channels like with irssi
+- doesn't require more depedencies than the networking library,
+  potentially only /dev/tcp/host/port, so bash, and no other
+  requirements, purely TUI or CLI application, like irssi
+
+* OS project
+- make something for the Kotori command, nini command
+- make some weird black voodoo magic POSIX compatability layer that
+  makes running POSIX stuff possible, but doesn't make the OS require to
+  be UNIX-clone (probably impossible, particularly impossible for me,
+  but I like the idea of it)
+- write a shell language that can be used for most standard unix
+  utilities
+- have the standard utilities be one executable that acts according to
+  the symlink it has been called by, think busybox/toybox
+- not be a retard and fix my IDT before I fantasize about things that
+  will never exist. 
+
+* eternal-monologue.net self-hosted
+- Self-host it from a RPI/Starfive Visionfive 2/other SBC
+- use NetBSD as the OS, use wireguard-go instead of the native NetBSD
+  wireguard implementation (for the reverse proxying)
+- Minimalist web server that only serves static HTML pages over HTTP
+  (without HTTPS, since the reverse proxy already is encrypted),
+  research viable software for that, use nginx when anything else fails
+- Host birdsnest.moe and eternal-monologue.net both from home, use the
+  VPS only for reverse proxying
+- ...
+
+* Gameboy emulator
+- graphical debugger, no print-debugging, use that to work with the
+  emulator, and do this first and foremost
