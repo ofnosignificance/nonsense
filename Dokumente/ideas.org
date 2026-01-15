@@ -87,3 +87,26 @@
 ** Gikopoi2 modifications
 - add Gondola, Kotori characters
 - make more rooms
+
+** Offline noise generator
+- use a longer audio trak for the cafe
+- make a pleasant-to-use UI (bigger volume/play buttons)
+- use only public domain audio pieces, audio that I can use freely
+  without copyright restrictions
+- maybe record some of the sounds myself (when I get the opportunity to)
+- make a nice animation for it (either a fireplace in the forest at
+  night, or a cyberpunk cafe gif)
+- Maaaaaybe make it an offline program that can be used on the desktop
+  without any browser
+
+** Quest textboard
+- textboard/BBS meant for interactive, creative writing
+- in principle the same as /qst/, but it's own imageboard
+- with other boards related to facilitate discussion regarding creative
+  writing, maybe an imageboard to draw pictures for the quests, but
+  generally a textboard
+- maybe runs Kareha, but with a public moderation log, if that is
+  possible, although I don't like Perl, so that's still questionable
+- moderation containing itself to only allow quests on the quests board
+  and nothing else, no spam, nothing illegal, duh, like every other
+  textboard in existence
