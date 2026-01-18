@@ -14,12 +14,40 @@
 (use-package json-mode)
 (use-package sly
   :init (setq inferior-lisp-program "sbcl"))
+(use-package sly-quicklisp)
+(use-package modern-cpp-font-lock
+  :ensure t
+  :hook (c++-mode . modern-c++-font-lock-mode))
+(use-package cmake-mode
+  :ensure t)
+(use-package cmake-font-lock
+  :ensure t
+  :hook (cmake-mode . cmake-font-lock-activate))
+(use-package yasnippet
+  :ensure t
+  :hook (c++-mode . yas-minor-mode)
+  :config
+  (yas-reload-all))
+(use-package yasnippet-snippets
+  :ensure t)
 
 ;; Development tools
 (use-package magit)
-(use-package doxymacs)
+(use-package csv-mode)
 (use-package company
   :config (global-company-mode t))
+(use-package company-doxygen
+  :ensure t
+  :config
+  (add-to-list 'company-backends 'company-doxygen))
+(use-package company-c-headers
+  :ensure t
+  :after company
+  :config
+  (add-to-list 'company-backends 'company-c-headers))
+(use-package format-all
+  :ensure t
+  :hook (c++-mode . format-all-mode))
 
 ;; Other
 (use-package multiple-cursors
