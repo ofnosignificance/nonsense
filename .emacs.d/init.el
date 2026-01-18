@@ -14,7 +14,6 @@
 (use-package json-mode)
 (use-package sly
   :init (setq inferior-lisp-program "sbcl"))
-(use-package sly-quicklisp)
 (use-package modern-cpp-font-lock
   :ensure t
   :hook (c++-mode . modern-c++-font-lock-mode))
@@ -33,13 +32,8 @@
 
 ;; Development tools
 (use-package magit)
-(use-package csv-mode)
 (use-package company
   :config (global-company-mode t))
-(use-package company-doxygen
-  :ensure t
-  :config
-  (add-to-list 'company-backends 'company-doxygen))
 (use-package company-c-headers
   :ensure t
   :after company
@@ -145,6 +139,8 @@
  ;; If there is more than one, they won't work right.
  '(display-line-numbers-type 'relative)
  '(global-display-line-numbers-mode t)
+ '(package-selected-packages
+   '(format-all company-c-headers company-doxygen yasnippet-snippets yasnippet cmake-font-lock cmake-mode modern-cpp-font-lock sly poet-theme multiple-cursors markdown-mode magit json-mode jinx forth-mode doxymacs company))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
