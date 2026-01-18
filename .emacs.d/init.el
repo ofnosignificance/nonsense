@@ -14,20 +14,7 @@
 (use-package json-mode)
 (use-package sly
   :init (setq inferior-lisp-program "sbcl"))
-(use-package modern-cpp-font-lock
-  :ensure t
-  :hook (c++-mode . modern-c++-font-lock-mode))
 (use-package cmake-mode
-  :ensure t)
-(use-package cmake-font-lock
-  :ensure t
-  :hook (cmake-mode . cmake-font-lock-activate))
-(use-package yasnippet
-  :ensure t
-  :hook (c++-mode . yas-minor-mode)
-  :config
-  (yas-reload-all))
-(use-package yasnippet-snippets
   :ensure t)
 
 ;; Development tools
