@@ -110,3 +110,8 @@
 - moderation containing itself to only allow quests on the quests board
   and nothing else, no spam, nothing illegal, duh, like every other
   textboard in existence
+
+*** Tcl utility for music player daemon
+- works like mpc, but written in Tcl
+- autocompletes songs in the library when choosing to play one
+- configured within Tcl

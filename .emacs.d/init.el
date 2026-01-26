@@ -13,7 +13,7 @@
 (use-package markdown-mode)
 (use-package json-mode)
 (use-package sly
-  :init (setq inferior-lisp-program "sbcl"))
+  :init (setq inferior-lisp-program "clisp"))
 (use-package cmake-mode
   :ensure t)
 
@@ -135,3 +135,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "IBM Plex Mono" :foundry "IBM " :slant normal :weight medium :height 120 :width normal)))))
+(put 'downcase-region 'disabled nil)
